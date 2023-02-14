@@ -22,19 +22,19 @@ class Mensaje
 
     #[ORM\ManyToOne(inversedBy: 'mensajes')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?modo $id_modo = null;
+    private ?Modo $id_modo = null;
 
     #[ORM\ManyToOne(inversedBy: 'mensajes')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?banda $id_banda = null;
+    private ?Banda $id_banda = null;
 
     #[ORM\ManyToOne(inversedBy: 'mensajes')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?user $participante = null;
+    private ?User $participante = null;
 
     #[ORM\ManyToOne(inversedBy: 'mensajes')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?user $juez = null;
+    private ?User $juez = null;
 
     public function getId(): ?int
     {
