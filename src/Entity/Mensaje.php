@@ -14,17 +14,7 @@ class Mensaje
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column]
-    private ?int $id_participante = null;
 
-    #[ORM\Column]
-    private ?int $id_juez = null;
-
-    #[ORM\Column]
-    private ?int $id_modo = null;
-
-    #[ORM\Column]
-    private ?int $id_banda = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $fecha = null;
@@ -32,57 +22,17 @@ class Mensaje
     #[ORM\Column(nullable: true)]
     private ?bool $validado = null;
 
+    #[ORM\ManyToOne(inversedBy: 'mensajes')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?modo $id_modo = null;
+
+    #[ORM\ManyToOne(inversedBy: 'mensajes')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?banda $id_banda = null;
+
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getIdParticipante(): ?int
-    {
-        return $this->id_participante;
-    }
-
-    public function setIdParticipante(int $id_participante): self
-    {
-        $this->id_participante = $id_participante;
-
-        return $this;
-    }
-
-    public function getIdJuez(): ?int
-    {
-        return $this->id_juez;
-    }
-
-    public function setIdJuez(int $id_juez): self
-    {
-        $this->id_juez = $id_juez;
-
-        return $this;
-    }
-
-    public function getIdModo(): ?int
-    {
-        return $this->id_modo;
-    }
-
-    public function setIdModo(int $id_modo): self
-    {
-        $this->id_modo = $id_modo;
-
-        return $this;
-    }
-
-    public function getIdBanda(): ?int
-    {
-        return $this->id_banda;
-    }
-
-    public function setIdBanda(int $id_banda): self
-    {
-        $this->id_banda = $id_banda;
-
-        return $this;
     }
 
     public function getFecha(): ?\DateTimeInterface
@@ -105,6 +55,30 @@ class Mensaje
     public function setValidado(?bool $validado): self
     {
         $this->validado = $validado;
+
+        return $this;
+    }
+
+    public function getIdModo(): ?modo
+    {
+        return $this->id_modo;
+    }
+
+    public function setIdModo(?modo $id_modo): self
+    {
+        $this->id_modo = $id_modo;
+
+        return $this;
+    }
+
+    public function getIdBanda(): ?banda
+    {
+        return $this->id_banda;
+    }
+
+    public function setIdBanda(?banda $id_banda): self
+    {
+        $this->id_banda = $id_banda;
 
         return $this;
     }
