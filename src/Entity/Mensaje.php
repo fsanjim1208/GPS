@@ -14,8 +14,6 @@ class Mensaje
     #[ORM\Column]
     private ?int $id = null;
 
-
-
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $fecha = null;
 
@@ -29,6 +27,14 @@ class Mensaje
     #[ORM\ManyToOne(inversedBy: 'mensajes')]
     #[ORM\JoinColumn(nullable: false)]
     private ?banda $id_banda = null;
+
+    #[ORM\ManyToOne(inversedBy: 'mensajes')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?user $participante = null;
+
+    #[ORM\ManyToOne(inversedBy: 'mensajes')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?user $juez = null;
 
     public function getId(): ?int
     {
@@ -79,6 +85,30 @@ class Mensaje
     public function setIdBanda(?banda $id_banda): self
     {
         $this->id_banda = $id_banda;
+
+        return $this;
+    }
+
+    public function getParticipante(): ?user
+    {
+        return $this->participante;
+    }
+
+    public function setParticipante(?user $participante): self
+    {
+        $this->participante = $participante;
+
+        return $this;
+    }
+
+    public function getJuez(): ?user
+    {
+        return $this->juez;
+    }
+
+    public function setJuez(?user $juez): self
+    {
+        $this->juez = $juez;
 
         return $this;
     }
