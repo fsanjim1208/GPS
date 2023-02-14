@@ -1,0 +1,73 @@
+
+%input{
+   // margin-left: 15%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 70%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s 
+}
+
+%inputFocus{
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 .2rem rgba(0,123,255,.25);
+}
+
+.c-input{
+    @extend %input;
+    &__texto{
+        @extend %input;
+        &:focus{
+            @extend %inputFocus;
+        }
+    }
+
+    &__select{
+        width: 76%;
+        margin-left: 0%;
+        &:focus{
+            @extend %inputFocus;
+        }
+    }
+
+    &__fecha{
+        width: 32%;
+        margin-left: 0%;
+        &:focus{
+            @extend %inputFocus;
+        }
+    }
+
+    &__hora{
+        width: 32%;
+        margin-left: 4.3%;
+        &:focus{
+            @extend %inputFocus;
+        }
+    }
+
+    &__GPSX{
+        width:27.7%;
+    }
+
+    &__GPSY{
+        width: 27.7%;
+        margin-left: 10%;
+    }
+}
+
+
+
+

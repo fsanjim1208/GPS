@@ -1,0 +1,161 @@
+h1,h2,h3,h4{
+    text-align: center;
+    color: $maincolor;
+}
+
+/*MARGIN TOP*/
+.mgtpS{
+    margin-top: 0.5em;
+}
+.mgtpM{
+    margin-top: 2em;
+}
+.mgtpL{
+    margin-top: 4em;
+}
+/*MARGIN BOTTOM*/
+.mgbS{
+    margin-bottom: 0.5em;
+}
+.mgbM{
+    margin-bottom: 2em;
+}
+.mgbL{
+    margin-bottom: 2.5em;
+}
+/*MARGIN LEFT*/
+.mglS{
+    margin-left: 0.5em;
+}
+.mglM{
+    margin-left: 2em;
+}
+.mglL{
+    margin-left: 7em;
+}
+/*MARGIN RIGHT*/
+.mgrS{
+    margin-right: 0.5em;
+}
+.mgrM{
+    margin-right: 2em;
+}
+.mgrL{
+    margin-right: 2.5em;
+}
+/*PADDING TOP*/
+.ptS{
+    padding-top: 0.5em;
+}
+.ptM{
+    padding-top: 2em;
+}
+.ptL{
+    padding-top: 2.5em;
+}
+/*PADDING BOTTOM*/
+.pbS{
+    padding-bottom: 0.5em;
+}
+.pbM{
+    padding-bottom: 1.5em;
+}
+.pbL{
+    padding-bottom: 2em;
+}
+/*PADDING LEFT*/
+.plS{
+    padding-left: 0.5em;
+}
+.plM{
+    padding-left: 1.5em;
+}
+.plL{
+    padding-left: 9em;
+}
+/*PADDING RIGHT*/
+.prS{
+    padding-right: 0.5em;
+}
+.prM{
+    padding-right: 1.5em;
+}
+.prL{
+    padding-right: 2em;
+}
+/*FONT SIZE*/
+.fsS{
+    font-size: 0.5em;
+}
+.fsM{
+    font-size: 1.5em;
+}
+.fsL{
+    font-size: 2em;
+}
+
+h1{
+    margin: 2%;
+    font-size:3em;
+}
+
+h2{
+    margin: 2%;
+    font-size:2em;
+}
+
+h4{
+    margin: 2%;
+    font-size:1.5em;
+}
+
+a{
+    text-decoration: none;
+    @include textoColor($maincolor);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    margin: 0 0 0 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+div{
+    text-align: center;
+}
+
+
+
+.c-label{
+    &__titulo{
+        //margin-left: 17.5%;
+        margin-right: 55%;
+        margin-top: 2%;
+        margin-bottom: 1%;
+        padding: 3px 3px 3px 3px;
+        color: $maincolor;
+        &--centrada{
+
+            margin-right: 0;
+        }
+    }
+
+    &__titulo2{
+        margin-top: 1%;
+        margin-bottom: 1%;
+        padding: 3px 3px 3px 3px;
+        color: $maincolor;
+    }
+}
+
+#fotos{
+    margin-right: 49%;
+}
+
+.valido{
+    color:green;
+}
+
+.invalido{
+    margin-top: 2%;
+    color:red;
+}

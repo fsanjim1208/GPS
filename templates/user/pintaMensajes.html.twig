@@ -1,0 +1,70 @@
+
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="contenedor">
+    {{error}}
+        <div class="form form-mensajes">
+            <div class="c-contentForm">
+                <h2 class="text-primary mt-5">Envia el mensaje</h2>
+                {{ form_start(form_mensaje,{'attr' : {'class': ''}}) }}
+                    <div class="row g-3">
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                {{ form_row(form_mensaje.id_modo,{'attr' : {'class': 'form-control', 'placeholder':'Nombre'},label:'Nombre'}) }}
+                            </div>
+                            <br>
+                            <div class="form-floating">
+                                {{ form_row(form_mensaje.id_banda,{'attr' : {'class': 'form-control','placeholder':'Apellido 1'},label:"Apellido 1"}) }}
+                            </div>
+                            <br>
+                            <div class="form-floating">
+                                {{ form_row(form_mensaje.distancia,{'attr' : {'class': 'form-control','placeholder':'Apellido 2'},label:'Apellido 2'}) }}
+                            </div>
+                            <br>
+                            <div class="form-floating">
+                                {{ form_row(form_mensaje.juez,{'attr' : {'class': 'form-control mb-4','placeholder':'Email'},label:'Email'}) }}
+                            </div>
+                            {{ form_row(form_mensaje.save,{'attr' : {'class': 'btn btn-primary w-100 py-3'}}) }}
+                        </div>
+                    </div>
+                {{ form_end(form_mensaje) }} 
+            
+            </div>
+        </div>
+
+    <div class="list list-mensajes">
+        <table class="table table-hover table-bordered table-condensed mt-3">
+            <thead>
+                <td>Modo</td>
+                <td>Banda</td>
+                <td>Distancia</td>
+                <td>Fecha</td>
+                <td>Id_juez</td>
+                <td>Validado</td>
+            </thead>
+            <tbody>
+                {% for mensaje in mensajes %}
+                    <tr>
+                        <td>{{ mensaje.getIdModo() }}</td>
+                        <td>{{ mensaje.getIdBanda() }}</td> 
+                        <td>{{ mensaje.distancia }}</td>
+                        <td>{{ mensaje.fecha }}</td>
+                        <td>{{ mensaje.juez }}</td> 
+                        {% if mensaje.validado is null %}
+                            <td>Sin validar</td>
+                        {% elseif mensaje.validado==0 %}
+                            <td>No valido</td>
+                        {% else %}
+                            <td>Valido</td>
+                        {% endif %}
+                        
+                    </tr>
+                {% endfor %} 
+            </tbodt>
+        </table>
+        <div class="navigation">
+            {{ knp_pagination_render(mensajes) }}
+        </div>
+    </div>
+</div>
+{% endblock %}

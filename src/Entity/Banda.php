@@ -102,4 +102,9 @@ class Banda
 
         return $this;
     }
+
+    public function __toString()
+    {
+    return $this->getDistancia().': ('.$this->getFrecuenciaMin().' - '.$this->getFrecuenciaMax().')';
+    }
 }

@@ -1,0 +1,19 @@
+.contenedor{
+    display: flex;
+    flex-flow: row wrap;
+    width:100%;
+    height:100%;
+}
+.c-contentForm{
+    text-align: center;
+}
+.form-mensajes{
+    width: 500px;
+    height: 600px;
+    margin-left: 2%;
+}
+
+.list-mensajes{
+    margin-left: 5%;
+    width: 900px;
+}

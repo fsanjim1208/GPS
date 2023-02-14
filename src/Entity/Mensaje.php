@@ -14,8 +14,8 @@ class Mensaje
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $fecha = null;
+    #[ORM\Column]
+    private ?String $fecha = null;
 
     #[ORM\Column(nullable: true)]
     private ?bool $validado = null;
@@ -36,17 +36,20 @@ class Mensaje
     #[ORM\JoinColumn(nullable: false)]
     private ?User $juez = null;
 
+    #[ORM\Column]
+    private ?int $distancia = null;
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getFecha(): ?\DateTimeInterface
+    public function getFecha(): ?String
     {
         return $this->fecha;
     }
 
-    public function setFecha(\DateTimeInterface $fecha): self
+    public function setFecha(String $fecha): self
     {
         $this->fecha = $fecha;
 
@@ -109,6 +112,18 @@ class Mensaje
     public function setJuez(?user $juez): self
     {
         $this->juez = $juez;
+
+        return $this;
+    }
+
+    public function getDistancia(): ?int
+    {
+        return $this->distancia;
+    }
+
+    public function setDistancia(int $distancia): self
+    {
+        $this->distancia = $distancia;
 
         return $this;
     }

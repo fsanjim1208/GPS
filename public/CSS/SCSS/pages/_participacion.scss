@@ -1,0 +1,96 @@
+.participacion__CreaMensaje{
+    padding: 1% 1% 1% 1%;
+    border: 0.5px solid rgb(74, 168, 246); 
+    border-radius: 5px;
+    margin-left: 140px;
+    margin-top: 2%;
+    text-align: center;
+
+    float: left;
+    width:20%;
+    .c-label__titulo{
+        margin-right: 0;
+    }
+}
+
+.participacion__Mensajes{
+    margin-top:1%;
+    float: right;
+    width:auto;
+    margin-right: 210px;
+    padding: 1% 1% 1% 1%;
+    text-align:center;
+}
+
+.c-container{
+    &__Juez{
+        margin-right: 11%;
+    }
+}
+// .Juez .participacion__Mensajes{
+//     margin-top:2%;
+//     float: left;
+//     width:auto;
+//     margin-left: 25%;
+//     padding: 1% 1% 1% 1%;
+//     /* border: 1px solid red; */
+//     text-align:center;
+// }
+
+// .Juez{
+//     text-align: center;
+//     align-items: center;
+// }
+
+// .imgconcurso{
+//     width: 150px;
+//     text-align: center;
+// }
+
+// .participacion__CreaMensaje select, .participacion__CreaMensaje input{
+//     padding: 0px 0px 0px 10px;
+//     width: 200px;
+//     height: 30px;
+//     margin-left: 20px;
+//     margin-top: 3%;
+//     margin-bottom: 3%;
+// }
+
+// .participacion__CreaMensaje .btn-nuevo{
+//     margin-top: 7%;
+//     margin-left: 38%;
+// }
+
+
+// .logoPaginacion{
+//     width: 30px;
+//     margin-left: 30px;
+//     margin-right: 30px;
+    
+// }
+
+
+
+// .participacion__Mensajes .paginacion{
+//     text-align: center;
+//     padding-left: 210px;
+// }
+// .paginacion label{
+//     display: block;
+//     float: left;
+//     margin-top: 15px;
+//     margin-left: 10px;
+//     /* margin-bottom:20px; */
+//     /* margin-left: 50px; */
+// }
+// .dibujaconcurso{
+//     padding: 15px;
+//     text-align: center;
+//     margin-top: 2%;
+//     margin-left: 35%;
+//     margin-right: 35%;
+//     border-style:  solid;
+//     border-color: $maincolor;
+//     border-radius: 5px;
+    
+// }

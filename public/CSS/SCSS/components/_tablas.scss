@@ -1,0 +1,41 @@
+%tabla{
+    border-collapse: collapse;
+    border: solid 1px;
+    border-color: $maincolor;
+    color: $maincolor;
+    height: 30px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;  
+}
+.listados{
+    @extend %tabla;
+    
+
+}
+
+#modo{
+    @extend %tabla;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto; 
+    thead th{
+        @extend %tabla;
+        background-color: $secondcolor;
+    }
+    tbody tr td{
+        @extend %tabla;
+        width: 220px;
+        height: 65px;
+    }
+}
+#contenedor .paginacion{
+    margin-left: 40%;
+}
+
+
+
+
+
+
+

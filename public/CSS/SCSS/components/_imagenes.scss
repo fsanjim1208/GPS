@@ -1,0 +1,33 @@
+$width:30px;
+$height:30px;
+
+.c-imagen{
+    margin-top: 2%;
+    width: $width;
+    height: $height;
+    &__paginacion{
+        width: 40px;
+        height: 40px;
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+    &__inicio{
+        width: 200px;
+        height: 200px;
+    }
+    &__logo{
+        position: relative;
+        top: 12px;
+        width: 40px;
+        height: 40px;
+    }
+
+    &__sesion{
+        position: relative;
+        top: 12px;
+        margin-left: 40%;
+        width: 40px;
+        height: 40px;
+    }
+}
+

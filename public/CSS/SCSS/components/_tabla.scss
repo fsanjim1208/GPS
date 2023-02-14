@@ -1,0 +1,115 @@
+%tabla{
+    border-collapse: collapse;
+    border: solid 1px;
+    //border-color: rgb(56, 118, 198);;
+    border-color: rgb(56, 118, 198);
+    //color: $maincolor;
+    color: rgb(56, 118, 198);;
+    height: 30px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;  
+}
+
+.c-tabla{
+    @extend %tabla;
+    thead th{
+        text-align: center;
+        background-color: rgb(188, 221, 248);
+        border: solid 1px;
+        border-color: rgb(56, 118, 198);
+        vertical-align:middle;
+    }
+    tbody tr td{
+        text-align: center;
+        width: 120px;
+        height: 50px;
+        border: solid 1px;
+        border-color: rgb(56, 118, 198);
+        vertical-align:middle;
+    }
+    
+    &__modo{        
+        tbody tr td{
+            width: 200px;
+        }
+        thead th{
+            text-align: center;
+            height: 30px;
+        }
+    }
+
+    &__concursos{       
+        tbody tr td{
+            width: 120px;
+            
+        }
+        thead th{
+            text-align: center;
+            height: 40px;
+        }
+    }
+    &__participantes{
+        tbody tr td{
+            width: 120px;
+            
+        }
+        thead th{
+            text-align: center;
+            height: 40px;
+        }
+    }
+
+    &__bandas{
+        tbody tr td{
+            width: 120px;
+        }
+        thead th{
+            text-align: center;
+            height: 40px;
+        }
+    }
+    &__mensajes{
+        tbody tr td{
+            width: 120px;
+        }
+        thead th{
+            text-align: center;
+            height: 40px;
+        }
+    }
+
+    &__editaModoConcurso{
+        //margin-right: 68%;
+        border-style: none;
+        tbody tr td{
+            border-style: none;
+            @include textoColor(black);
+        }
+    }
+
+    &__editaBandaConcurso{
+        //margin-right: 40%;
+        border-style: none;
+        tbody tr td{
+            border-style: none;
+            @include textoColor(black);
+        }
+    }
+
+    &__inscribir{
+        margin-top: 2%;
+        border-style: none;
+        @include textoColor(black);
+        tbody tr td{
+            border-style: none;
+        }
+        thead th{
+            @include colorFondo(white);
+            border-style: none;
+            height: 30px;
+        }
+    }
+
+
+}

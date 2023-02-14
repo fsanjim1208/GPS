@@ -32,13 +32,25 @@ class ApiMensajeController extends AbstractController
         }
         
         foreach ($mensajes as $mensaje) {
+            // if($mensaje->isValidado()){
+            //     $valido= "Valido";
+            // }
+            // else if(is_null($mensaje->isValidado())){
+            //     $valido= "Sin validar";
+            // }
+            // else{
+            //     $valido= "No valido";
+            // }
+
+
             $arrayMensajes[] = [
                 'id' => $mensaje->getId(),
-                'ancho' => $mensaje->getAncho(),
-                'alto' => $mensaje->getAlto(),
-                'x' => $mensaje->getX(),
-                'y' => $mensaje->getY(),
-                'imagen' => $mensaje->getImagen(),
+                'banda' => $mensaje->getIdBanda()->getDistancia().': ('.$mensaje->getIdBanda()->getFrecuenciaMin().' - '.$mensaje->getIdBanda()->getFrecuenciaMax().')',
+                'modo' => $mensaje->getIdModo()->getNombre().': '.$mensaje->getIdModo()->getDescripcion(),
+                'distancia' => $mensaje->getDistancia(),
+                'validado' => $mensaje->isValidado(),
+                'participante' => $mensaje->getParticipante()->getId(),
+                'juez' => $mensaje->getJuez()->getId(),
             ];
         }
  
@@ -60,11 +72,12 @@ class ApiMensajeController extends AbstractController
  
         $arrayMensajes[] = [
             'id' => $mensaje->getId(),
-            'ancho' => $mensaje->getAncho(),
-            'alto' => $mensaje->getAlto(),
-            'x' => $mensaje->getX(),
-            'y' => $mensaje->getY(),
-            'imagen' => $mensaje->getImagen(),
+            'banda' => $mensaje->getIdBanda()->getDistancia().': ('.$mensaje->getIdBanda()->getFrecuenciaMin().' - '.$mensaje->getIdBanda()->getFrecuenciaMax().')',
+            'modo' => $mensaje->getIdModo()->getNombre().': '.$mensaje->getIdModo()->getDescripcion(),
+            'distancia' => $mensaje->getDistancia(),
+            'validado' => $mensaje->isValidado(),
+            'participante' => $mensaje->getParticipante()->getId(),
+            'juez' => $mensaje->getJuez()->getId(),
 
         ];
          
@@ -81,26 +94,23 @@ class ApiMensajeController extends AbstractController
         if (!$mensaje) {
             return $this->json(['No hay mensajes por esa id: ' . $id, 'codigo:404 '], 404);
         }
- 
-        $mensaje->setAncho($request->request->get('ancho'));
-        $mensaje->setAlto($request->request->get('alto'));
-        $mensaje->setX($request->request->get('x'));
-        $mensaje->setY($request->request->get('y'));
-        $mensaje->setImagen($request->request->get('imagen'));
+
+        $mensaje->setValidado($request->request->get('validado'));
         
         $entityManager->persist($mensaje);
         $entityManager->flush();
 
         $arrayMensajes[] = [
             'id' => $mensaje->getId(),
-            'ancho' => $mensaje->getAncho(),
-            'alto' => $mensaje->getAlto(),
-            'x' => $mensaje->getX(),
-            'y' => $mensaje->getY(),
-            'imagen' => $mensaje->getImagen(),
+            'banda' => $mensaje->getIdBanda()->getDistancia().': ('.$mensaje->getIdBanda()->getFrecuenciaMin().' - '.$mensaje->getIdBanda()->getFrecuenciaMax().')',
+            'modo' => $mensaje->getIdModo()->getNombre().': '.$mensaje->getIdModo()->getDescripcion(),
+            'distancia' => $mensaje->getDistancia(),
+            'validado' => $mensaje->isValidado(),
+            'participante' => $mensaje->getParticipante()->getId(),
+            'juez' => $mensaje->getJuez()->getId(),
         ];
          
-        return $this->json(['Guardada la mensaje con id: '. $id ,'codigo: 201',$arrayMensajes],201);
+        return $this->json(['Guardada el mensaje con id: '. $id ,'codigo: 201',$arrayMensajes],201);
     }
  
 

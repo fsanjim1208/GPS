@@ -1,0 +1,11 @@
+@mixin textoColor($color){
+    color:$color;
+}
+
+@mixin colorFondo($color){
+    background-color:$color;
+}
+
+@mixin borderColor($color){
+    border-color:$color;
+}

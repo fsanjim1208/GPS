@@ -1,0 +1,14 @@
+.form-centro {
+  margin-left: 40%;
+}
+
+.contenedor {
+  display: flex;
+  border: 1px solid red;
+}
+
+.form-mensajes {
+  width: 600px;
+  height: 400px;
+  border: 1px solid green;
+}/*# sourceMappingURL=main.css.map */

@@ -35,17 +35,17 @@ class LoginController extends AbstractController
         return $this->render('main/home.html.twig');
     }
 
-    #[Route('/setAdmin/{id}', name: 'app_setAdmin')]
-    public function admin(id $id): Response
+    #[Route('/setAdmin', name: 'app_setAdmin')]
+    public function admin(): Response
     {
         $entityManager = $this->doctrine->getManager();
-        $user = $entityManager->getRepository(User::class)->find($id);
+        $user = $entityManager->getRepository(User::class)->find(2);
         
         $user->setRoles(['ROLE_ADMIN']);
         
         $entityManager->persist($user);
         $entityManager->flush();
 
-        return $this->render('juegos.html.twig');
+        return $this->render('main/home.html.twig');
     }
 }

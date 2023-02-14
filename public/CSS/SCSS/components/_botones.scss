@@ -1,0 +1,121 @@
+//con % evitamos que se importe este elemento
+
+
+%btn {
+  @include borderColor($maincolor);
+  //border-color: $maincolor;
+  @include textoColor($maincolor);
+  @include colorFondo(white);
+  padding: 5px 10px 5px 10px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  border-radius: 5px;
+}
+
+.c-btn{
+  @extend %btn;
+  &__añadir{
+    margin-top: 1%;
+    border-radius: 5px;
+  
+    margin-bottom: 15px;
+    width: 72%;
+    height: 40px;
+    display: inline-block;
+    font-weight: 400;
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+    @include colorFondo(rgb(0, 123, 255));
+    border: 1px solid $maincolor
+  }
+
+  &__nuevo{
+    @extend %btn;
+    &--concurso{
+      margin-left: 64%
+    }
+
+    &--participante{
+      margin-left: 65%;
+    }
+
+    &--modo{
+      margin-left: 26%;
+    }
+
+    &--banda{
+      margin-left: 23%;
+    }
+  }
+
+  &__entrar{
+    @extend %btn;
+  }
+  &__participar{
+    @include colorFondo(white);
+  }
+
+  &__permitir{
+    margin-left: 2%;
+    width: 15%;
+    @include textoColor(white);
+    text-align: center;
+    background-color: rgb(0, 123, 255);
+  }
+  &__capturar{
+    margin-right: 19%;
+    width: 15%;
+    @include textoColor(white);
+    text-align: center;
+    @include colorFondo(rgb(0, 123, 255));
+  }
+
+  &__filtro{
+    margin-left: 1%;
+    width: 5%;
+    @include textoColor(rgb(0, 123, 255));
+    text-align: center;
+    @include colorFondo(white);
+    &:hover{
+      color: white;
+      @include colorFondo(rgb(0, 123, 255));
+    }
+  }
+
+  &__invalido{
+    padding: 5px;
+    @include colorFondo(white);
+    @include borderColor($error_color);
+    @include textoColor($error_color);
+    &:hover{
+      padding: 5px;
+      @include colorFondo($error_color);
+      @include borderColor($error_color);
+      @include textoColor(white);
+    }
+  }
+
+  &__valido {
+    padding: 5px;
+    @include colorFondo(white);
+    @include borderColor($valid_color);
+    @include textoColor($valid_color);
+    &:hover{
+      padding: 5px;
+      @include colorFondo($valid_color);
+      @include borderColor($valid_color);
+      @include textoColor(white);
+    }
+  }
+  &__inscribir{
+    @include colorFondo($maincolor);
+    @include textoColor(white);
+    width: 40%;
+  }
+  
+}
+
+
+
+
